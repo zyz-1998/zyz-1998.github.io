@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>hexo+github博客搭建历程 | ZYZ BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZYZ,ZYZ BLOG">
+  
+  <meta name="description" content="详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。">
+<meta name="keywords" content="博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github博客搭建历程">
+<meta property="og:url" content="https://zyz-1998.github.io/2019/07/17/hexo+github/index.html">
+<meta property="og:site_name" content="ZYZ BLOG">
+<meta property="og:description" content="详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-17T07:54:08.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+github博客搭建历程">
+<meta name="twitter:description" content="详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">ZYZ Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        ZYZ Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        乘风破浪会有时，直挂云帆济沧海。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="ZYZ" target="_blank" href="//zyz-1998.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/zyz-1998">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-hexo+github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      hexo+github博客搭建历程
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/博客/">博客</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-07-17
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。</p>
+<a id="more"></a>
+<h3 id="一、-准备工作"><a href="#一、-准备工作" class="headerlink" title="一、 准备工作"></a>一、 准备工作</h3><p>1）node.js 安装<br>下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a><br>2) git 安装<br>下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a><br>3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名</p>
+<h3 id="二、-git配置"><a href="#二、-git配置" class="headerlink" title="二、 git配置"></a>二、 git配置</h3><p>该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。</p>
+<h4 id="2-1-设置账户和邮箱"><a href="#2-1-设置账户和邮箱" class="headerlink" title="2.1 设置账户和邮箱"></a>2.1 设置账户和邮箱</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;your name&quot;</span><br><span class="line">$ git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-生成并获取ssh秘钥"><a href="#2-2-生成并获取ssh秘钥" class="headerlink" title="2.2 生成并获取ssh秘钥"></a>2.2 生成并获取ssh秘钥</h4><p>git bash 输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;***@gmail.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>***@gmail.com为你注册github时的邮箱，接下来可能需要你输入windows账户的密码，取决于你的账户操作权限,输入密码后一直回车即可。</p>
+<h4 id="2-3-配置github-ssh"><a href="#2-3-配置github-ssh" class="headerlink" title="2.3 配置github ssh"></a>2.3 配置github ssh</h4><p>将上一步生成的秘钥添加至github中，首先复制秘钥，id_rsa.pub文件中，位置如下供参考</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\元天墨染\.ssh\id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>登录github账户，选择Personal settings &gt; SSH and GPG keys，添加秘钥</p>
+<h4 id="2-4-验证链接"><a href="#2-4-验证链接" class="headerlink" title="2.4 验证链接"></a>2.4 验证链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi xxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、-hexo安装配置"><a href="#三、-hexo安装配置" class="headerlink" title="三、 hexo安装配置"></a>三、 hexo安装配置</h3><h4 id="3-1-安装"><a href="#3-1-安装" class="headerlink" title="3.1 安装"></a>3.1 安装</h4><p>首先建立一个hexo文件夹作为安装目录，git bash【在hexo文件夹也就是你的安装位置打开】<br>输入下列命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g //安装hexo</span><br><span class="line">hexo init blog  //hexo初始化于blog文件夹</span><br><span class="line">cd blog</span><br><span class="line">npm install //安装相关依赖包</span><br><span class="line">hexo server //本地启动hexo【用作博客发布前本地预览】</span><br><span class="line">npm install hexo-deployer-git --save   //使用git方式进行部署博客所需插件</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h4><p>_config.yml 站点配置文件<br>package.json 主要描述hexo版本信息及安装的依赖<br>打开_config.yml文件找到deploy并参照下方进行修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  //repo: 应为你的github仓库ssh clone,注意repo:后的空格不能省略</span><br><span class="line">  repo: git@github.com:zyz-1998/zyz-1998.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-部署"><a href="#3-3-部署" class="headerlink" title="3.3 部署"></a>3.3 部署</h4><p>hexo根目录blog打开git bash输入下列命令  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>此时就可以在浏览器输入<a href="https://123.github.io/打开hexo默认界面。" target="_blank" rel="noopener">https://123.github.io/打开hexo默认界面。</a></p>
+<h3 id="四、-hexo更换主题"><a href="#四、-hexo更换主题" class="headerlink" title="四、 hexo更换主题"></a>四、 hexo更换主题</h3><p>访问hexo官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> 在主题页面有许多官方主题，这里我选择的是miho<br>miho地址:<a href="https://blog.minhow.com/" target="_blank" rel="noopener">https://blog.minhow.com/</a><br>里面有详细的操作流程，这里就不再赘述。</p>
+<h3 id="五、-常用命令总结"><a href="#五、-常用命令总结" class="headerlink" title="五、 常用命令总结"></a>五、 常用命令总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的博客&quot; //新建文章,在blog\source\_posts会生成对应的md文件</span><br><span class="line">hexo new page &quot;pageName&quot; //新建页面，blog\source中生成相应的pageName文件夹</span><br><span class="line">hexo g == hexo generate //生成静态网页</span><br><span class="line">hexo s == hexo server //启动服务预览</span><br><span class="line">hexo d == hexo deploy //开始部署</span><br><span class="line">以上是文章摘要 &lt;!--more--&gt; 以下是余下全文 //设置文章摘要</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年07月17日 15:54</p>
+        <p>原始链接： <a class="post-url" href="/2019/07/17/hexo+github/" title="hexo+github博客搭建历程">https://zyz-1998.github.io/2019/07/17/hexo+github/</a></p>
+        <footer>
+            <a href="https://zyz-1998.github.io">
+                <img src="/images/logo.png" alt="ZYZ">
+                ZYZ
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zyz-1998.github.io/2019/07/17/hexo+github/&title=《hexo+github博客搭建历程》 — ZYZ BLOG&pic=/images/ba123.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zyz-1998.github.io/2019/07/17/hexo+github/&title=《hexo+github博客搭建历程》 — ZYZ BLOG&source=详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zyz-1998.github.io/2019/07/17/hexo+github/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo+github博客搭建历程》 — ZYZ BLOG&url=https://zyz-1998.github.io/2019/07/17/hexo+github/&via=https://zyz-1998.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zyz-1998.github.io/2019/07/17/hexo+github/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zyz-1998.github.io/2019/07/17/hexo+github/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/博客/" class="color3">博客</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、-准备工作"><span class="post-toc-text">一、 准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、-git配置"><span class="post-toc-text">二、 git配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-设置账户和邮箱"><span class="post-toc-text">2.1 设置账户和邮箱</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-生成并获取ssh秘钥"><span class="post-toc-text">2.2 生成并获取ssh秘钥</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-配置github-ssh"><span class="post-toc-text">2.3 配置github ssh</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-验证链接"><span class="post-toc-text">2.4 验证链接</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、-hexo安装配置"><span class="post-toc-text">三、 hexo安装配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-安装"><span class="post-toc-text">3.1 安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-配置"><span class="post-toc-text">3.2 配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-部署"><span class="post-toc-text">3.3 部署</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、-hexo更换主题"><span class="post-toc-text">四、 hexo更换主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、-常用命令总结"><span class="post-toc-text">五、 常用命令总结</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Hello World</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 ZYZ<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://zyz-1998.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/博客/">博客</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/博客/" style="font-size: 10px;">博客</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/博客/" style="font-size: 10px;">博客</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
