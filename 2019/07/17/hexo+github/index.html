@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="ZYZ,ZYZ BLOG">
   
-  <meta name="description" content="详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。">
+  <meta name="description" content="一、 准备工作1）node.js 安装下载地址：https://nodejs.org/en/download2) git 安装下载地址：https://git-scm.com/download3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名 二、 git配置该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。 2.1 设">
 <meta name="keywords" content="博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+github博客搭建历程">
 <meta property="og:url" content="https://zyz-1998.github.io/2019/07/17/hexo+github/index.html">
 <meta property="og:site_name" content="ZYZ BLOG">
-<meta property="og:description" content="详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。">
+<meta property="og:description" content="一、 准备工作1）node.js 安装下载地址：https://nodejs.org/en/download2) git 安装下载地址：https://git-scm.com/download3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名 二、 git配置该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。 2.1 设">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T07:54:08.761Z">
+<meta property="og:updated_time" content="2019-07-17T07:58:02.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github博客搭建历程">
-<meta name="twitter:description" content="详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。">
+<meta name="twitter:description" content="一、 准备工作1）node.js 安装下载地址：https://nodejs.org/en/download2) git 安装下载地址：https://git-scm.com/download3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名 二、 git配置该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。 2.1 设">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -146,11 +146,10 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。</p>
-<a id="more"></a>
-<h3 id="一、-准备工作"><a href="#一、-准备工作" class="headerlink" title="一、 准备工作"></a>一、 准备工作</h3><p>1）node.js 安装<br>下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a><br>2) git 安装<br>下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a><br>3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名</p>
+            <h3 id="一、-准备工作"><a href="#一、-准备工作" class="headerlink" title="一、 准备工作"></a>一、 准备工作</h3><p>1）node.js 安装<br>下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a><br>2) git 安装<br>下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a><br>3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名</p>
 <h3 id="二、-git配置"><a href="#二、-git配置" class="headerlink" title="二、 git配置"></a>二、 git配置</h3><p>该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。</p>
-<h4 id="2-1-设置账户和邮箱"><a href="#2-1-设置账户和邮箱" class="headerlink" title="2.1 设置账户和邮箱"></a>2.1 设置账户和邮箱</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;your name&quot;</span><br><span class="line">$ git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-设置账户和邮箱"><a href="#2-1-设置账户和邮箱" class="headerlink" title="2.1 设置账户和邮箱"></a>2.1 设置账户和邮箱</h4><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;your name&quot;</span><br><span class="line">$ git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-2-生成并获取ssh秘钥"><a href="#2-2-生成并获取ssh秘钥" class="headerlink" title="2.2 生成并获取ssh秘钥"></a>2.2 生成并获取ssh秘钥</h4><p>git bash 输入命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;***@gmail.com&quot;</span><br></pre></td></tr></table></figure>
@@ -178,7 +177,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年07月17日 15:54</p>
+        <p>最后更新： 2019年07月17日 15:58</p>
         <p>原始链接： <a class="post-url" href="/2019/07/17/hexo+github/" title="hexo+github博客搭建历程">https://zyz-1998.github.io/2019/07/17/hexo+github/</a></p>
         <footer>
             <a href="https://zyz-1998.github.io">
@@ -236,7 +235,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zyz-1998.github.io/2019/07/17/hexo+github/&title=《hexo+github博客搭建历程》 — ZYZ BLOG&pic=/images/ba123.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zyz-1998.github.io/2019/07/17/hexo+github/&title=《hexo+github博客搭建历程》 — ZYZ BLOG&pic=/images/02.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -246,7 +245,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zyz-1998.github.io/2019/07/17/hexo+github/&title=《hexo+github博客搭建历程》 — ZYZ BLOG&source=详细的把自己搭建博客的过程记录了下，作为一个未来的程序猿怎么能没有一个博客呢，遂有了本文，仍然有许多问题，不断学习吧。" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zyz-1998.github.io/2019/07/17/hexo+github/&title=《hexo+github博客搭建历程》 — ZYZ BLOG&source=一、 准备工作1）node.js 安装下载地址：https://nodejs.org/en/download2) git 安装下载地址：https://g..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
