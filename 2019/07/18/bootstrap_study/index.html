@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190718-1.jpg">
 <meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190718-2.jpg">
-<meta property="og:updated_time" content="2019-07-20T07:02:29.010Z">
+<meta property="og:updated_time" content="2019-07-20T07:07:16.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap学习与实践">
 <meta name="twitter:description" content="因为最近实习涉及前端方面东西还是比较多的，故对相关知识进行下简单的总结，并用bootstrap这个比较流行的框架设计了一个简单的网站，主要页面包括主页、相册、归档、文章等页面，以便对其有更深的理解。资源地址：https://github.com/zyz-1998/project/tree/master/bootstrap_test">
@@ -175,6 +175,9 @@
 <p>第三，水平垂直居中：通过tansform：translate(-50%,-50%)来实现。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);</span><br></pre></td></tr></table></figure>
 
+<p><code>html内容超出了div或p的宽度如何换行让内容自动换行</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">word-wrap：break-word；</span><br><span class="line">overflow：hidden</span><br></pre></td></tr></table></figure>
+
 <p><code>对于css需要充分理解各属性的区别和应用场景。</code></p>
 <h3 id="二-JQuery"><a href="#二-JQuery" class="headerlink" title="二. JQuery"></a>二. JQuery</h3><p>JQuery是一个JScript函数库，BootStrap是一个基于html、css、JScript的前端框架，移动设备优先原则的响应式设计。并有着众多的UI编辑工具</p>
 <h4 id="2-1-JQuery"><a href="#2-1-JQuery" class="headerlink" title="2.1 JQuery"></a>2.1 JQuery</h4><p>JQuery重点——AJAX异步，能够在不重载整个页面的情况下，加载数据。<br><code>load()方法</code>从服务器加载数据，并把返回的数据放入被选元素中。</p>
@@ -197,7 +200,7 @@
 <h4 id="3-3-分页"><a href="#3-3-分页" class="headerlink" title="3.3 分页"></a>3.3 分页</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">第一种：在归档页面有实现</span><br><span class="line">&lt;div class=&quot;col-xs-12 col-sm-12 col-md-12 page11&quot;&gt;</span><br><span class="line">            &lt;ul class=&quot;pagination pagination-lg&quot;&gt;</span><br><span class="line">              &lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;background-color:#D5D5D5;color:#f79533&quot;&gt;1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#ef4e7b&quot;&gt;2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#5073b8&quot;&gt;3&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#1098ad&quot;&gt;4&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#07b39b&quot;&gt;5&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">第二种：在page页面有实现</span><br><span class="line">&lt;div class=&quot;col-xs-12 col-sm-12 col-md-12 page11&quot;&gt;</span><br><span class="line">              &lt;ul class=&quot;pager&quot;&gt;</span><br><span class="line">                &lt;li class=&quot;previous&quot;&gt;&lt;a href=&quot;#&quot;&gt;&amp;larr; Previous&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li class=&quot;next&quot;&gt;&lt;a href=&quot;#&quot;&gt;Next &amp;rarr;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;/ul&gt;</span><br><span class="line">           &lt;/div&gt;</span><br></pre></td></tr></table></figure>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年07月20日 15:02</p>
+        <p>最后更新： 2019年07月20日 15:07</p>
         <p>原始链接： <a class="post-url" href="/2019/07/18/bootstrap_study/" title="Bootstrap学习与实践">https://zyz-1998.github.io/2019/07/18/bootstrap_study/</a></p>
         <footer>
             <a href="https://zyz-1998.github.io">
