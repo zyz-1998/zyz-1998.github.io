@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Spring boot study-1 入门（hello word) | ZYZ BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="ZYZ,ZYZ BLOG">
+  
+  <meta name="description" content="开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解，他不是什么新框架，而是已有框架的整合与配置简化。">
+<meta name="keywords" content="Springboot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring boot study-1 入门（hello word)">
+<meta property="og:url" content="https://zyz-1998.github.io/2019/07/25/190725/index.html">
+<meta property="og:site_name" content="ZYZ BLOG">
+<meta property="og:description" content="开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解，他不是什么新框架，而是已有框架的整合与配置简化。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190725-1.jpg">
+<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190725-2.jpg">
+<meta property="og:updated_time" content="2019-07-25T02:40:09.673Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring boot study-1 入门（hello word)">
+<meta name="twitter:description" content="开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解，他不是什么新框架，而是已有框架的整合与配置简化。">
+<meta name="twitter:image" content="https://zyz-1998.github.io/images/my_img/190725-1.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">ZYZ Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        ZYZ Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        乘风破浪会有时，直挂云帆济沧海。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="ZYZ" target="_blank" href="//zyz-1998.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/zyz-1998">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//zyz-1998.github.io">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//zyz-1998.github.io">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-190725" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Spring boot study-1 入门（hello word)
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Java/">Java</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-07-25
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>开发工具：IntelliJ IDEA<br>Sping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解，他不是什么新框架，而是已有框架的整合与配置简化。</p>
+<a id="more"></a>
+
+<p>###一、 准备工作<br>JDK1.8或更高版本<br>项目自动构建工具：Gradle或者Maven，推荐Gradle对比maven有着简洁、灵活、可读性强等特点。<br>开发工具 eclipse或intelij等、个人推荐Intellij</p>
+<p>###二、 创建springboot应用程序<br>1、打开intellij，首页Create new project; 2、点击spring assistant<br>【如果没有spring assistant选项，请首页点击configure-&gt;Plugins后搜索安装即可】<br>下一步; 3、project properties，这里默认下一步即可随后选择spring web start并下<br>一步填写工程名字，最终完成应用程序创建<br>目录结构如下<br><img src="/images/my_img/190725-1.jpg" alt></p>
+<p>###三、 创建HelloController.java<br>在src-&gt;main-&gt;java中创建包hello，并在包内创建HelloController.java<br>这里的目的是创建web控制器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">HelloController.java</span><br><span class="line"></span><br><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class HelloController &#123;</span><br><span class="line">    </span><br><span class="line">    @RequestMapping(&quot;/&quot;)</span><br><span class="line">    public String index() &#123;</span><br><span class="line">        return &quot;Greetings from Spring Boot!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@RestController是spring4之后的新注解，即@Controller和@ResponseBody的组合注解，使Web请求返回数据而不是视图。<br>@RequestMapping配置url映射，即可以作用在控制器的某个方法上，也可以作用在此控制器类上<br>当控制器在类级别上添加@RequestMapping注解时，这个注解会应用到控制器的所有处理器方法上。<br>而处理器方法上的@RequestMapping注解会对类级别以上的@RequestMapping的声明进行补充。<br>@RequestMapping中的method参数有很多中选择，一般使用get/post.</p>
+<p>###四、 创建Application.java<br>hello包内创建Application.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Application.java</span><br><span class="line"></span><br><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.CommandLineRunner;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.context.ApplicationContext;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class Application &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    @Bean</span><br><span class="line">    public CommandLineRunner commandLineRunner(ApplicationContext ctx) &#123;</span><br><span class="line">        return args -&gt; &#123;</span><br><span class="line"></span><br><span class="line">            System.out.println(&quot;Let&apos;s inspect the beans provided by Spring Boot:&quot;);</span><br><span class="line"></span><br><span class="line">            String[] beanNames = ctx.getBeanDefinitionNames();</span><br><span class="line">            Arrays.sort(beanNames);</span><br><span class="line">            for (String beanName : beanNames) &#123;</span><br><span class="line">                System.out.println(beanName);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@SpringBootApplication是@Configuration、@EnableAutoConfiguration、@ComponentScan的组合注解<br>(1) @Configuration 是一个类级注释，指示对象是一个bean定义的源。@Configuration 类通过<br>@Bean 注解的公共方法来声明bean<br>(2)@EnableAutoConfiguration 启用 Spring 应用程序上下文的自动配置，试图猜测和配置您可能需要的bean。自动配置类通常采用基于你的<br>classpath 和已经定义的 beans 对象进行应用。被 @EnableAutoConfiguration 注解的类所在的包有特定的意义，并且作为默认配置使用。<br>(3)@ComponentScan为 @Configuration注解的类配置组件扫描指令。同时提供与 Spring XML’s 元素并行的支持。无论是 basePackageClasses()或是 basePackages()（或其 alias 值）都可以定义指定的包进行扫描。如果指定的包没有被定义，则将从声明该注解的类所在的包进行扫描。<br>通俗的讲，@ComponentScan 注解会自动扫描指定包下的全部标有 @Component注解 的类，并注册<br>成bean，当然包括 @Component下的子注解<br>@Service、@Repository、@Controller。@ComponentScan 注解没有类似 、的属性。<br>(4)@Bean 注释是用来表示一个方法实例化，配置和初始化是由 Spring IoC 容器管理的一个新的<br>对象。</p>
+<p>###五、 运行并访问<br>运行程序后访问<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a><br>效果如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> .   ____          _            __ _ _</span><br><span class="line"> /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \</span><br><span class="line">( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \</span><br><span class="line"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span><br><span class="line">  &apos;  |____| .__|_| |_|_| |_\__, | / / / /</span><br><span class="line"> =========|_|==============|___/=/_/_/_/</span><br><span class="line"> :: Spring Boot ::        (v2.1.6.RELEASE)</span><br><span class="line"></span><br><span class="line">2019-07-25 10:28:56.845  INFO 2912 --- [           main] hello.Application </span><br><span class="line">....................</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/my_img/190725-2.jpg" alt></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年07月25日 10:40</p>
+        <p>原始链接： <a class="post-url" href="/2019/07/25/190725/" title="Spring boot study-1 入门（hello word)">https://zyz-1998.github.io/2019/07/25/190725/</a></p>
+        <footer>
+            <a href="https://zyz-1998.github.io">
+                <img src="/images/logo.png" alt="ZYZ">
+                ZYZ
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zyz-1998.github.io/2019/07/25/190725/&title=《Spring boot study-1 入门（hello word)》 — ZYZ BLOG&pic=/images/my_img/190725.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zyz-1998.github.io/2019/07/25/190725/&title=《Spring boot study-1 入门（hello word)》 — ZYZ BLOG&source=开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spr..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zyz-1998.github.io/2019/07/25/190725/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spring boot study-1 入门（hello word)》 — ZYZ BLOG&url=https://zyz-1998.github.io/2019/07/25/190725/&via=https://zyz-1998.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zyz-1998.github.io/2019/07/25/190725/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zyz-1998.github.io/2019/07/25/190725/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Springboot/" class="color1">Springboot</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/18/bootstrap_study/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Bootstrap学习与实践</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 ZYZ<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://zyz-1998.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Java/">Java</a><a class="category-link" href="/categories/前端/">前端</a><a class="category-link" href="/categories/博客/">博客</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Springboot/" style="font-size: 10px;">Springboot</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Springboot/" style="font-size: 10px;">Springboot</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
