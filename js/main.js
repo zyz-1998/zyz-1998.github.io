@@ -1,4 +1,13 @@
 (function (w, d) {
+    $(document).scroll(function(){
+      var d_h = $(document).height();
+      var c_h = $(window).height();
+      var c_t_h = $(window).scrollTop();
+      var schedule = c_t_h / (d_h-c_h-0.5);
+      var str=Number(schedule*100).toFixed();
+            str+="%";
+      $("#page_percentage").text(str);
+      });
     var body = $('body, html'),
         toc = $("#post-toc"),
         headerMenu = $("#header-menu"),
