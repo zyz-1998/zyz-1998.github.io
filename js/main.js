@@ -4,6 +4,9 @@
       var c_h = $(window).height();
       var c_t_h = $(window).scrollTop();
       var schedule = c_t_h / (d_h-c_h-0.5);
+      if(schedule>1){
+        schedule=1;
+      }
       var str=Number(schedule*100).toFixed();
             str+="%";
       $("#page_percentage").text(str);
