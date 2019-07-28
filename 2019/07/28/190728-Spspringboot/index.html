@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Spring boot study-2 配置文件注入 | ZYZ BLOG</title>
+  <title>Spring boot study-2 数据注入-配置文件 | ZYZ BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="ZYZ,ZYZ BLOG">
   
-  <meta name="description" content="配置文件注入流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBean (Person.class Dog.class)定义实体类 3 配置文件 application.yml或application.properties 4 在test(单元测试)运行TestPersonApplicationTests.cl">
+  <meta name="description" content="配置文件数据注入的流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBean (Person.class Dog.class)定义实体类 3 配置文件 application.yml或application.properties 4 在test(单元测试)运行TestPersonApplicationTests">
 <meta name="keywords" content="Springboot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring boot study-2 配置文件注入">
+<meta property="og:title" content="Spring boot study-2 数据注入-配置文件">
 <meta property="og:url" content="https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/index.html">
 <meta property="og:site_name" content="ZYZ BLOG">
-<meta property="og:description" content="配置文件注入流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBean (Person.class Dog.class)定义实体类 3 配置文件 application.yml或application.properties 4 在test(单元测试)运行TestPersonApplicationTests.cl">
+<meta property="og:description" content="配置文件数据注入的流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBean (Person.class Dog.class)定义实体类 3 配置文件 application.yml或application.properties 4 在test(单元测试)运行TestPersonApplicationTests">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T07:03:49.253Z">
+<meta property="og:updated_time" content="2019-07-28T07:06:27.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring boot study-2 配置文件注入">
-<meta name="twitter:description" content="配置文件注入流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBean (Person.class Dog.class)定义实体类 3 配置文件 application.yml或application.properties 4 在test(单元测试)运行TestPersonApplicationTests.cl">
+<meta name="twitter:title" content="Spring boot study-2 数据注入-配置文件">
+<meta name="twitter:description" content="配置文件数据注入的流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBean (Person.class Dog.class)定义实体类 3 配置文件 application.yml或application.properties 4 在test(单元测试)运行TestPersonApplicationTests">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -117,7 +117,7 @@
         
   
     <h1 class="post-title" itemprop="name">
-      Spring boot study-2 配置文件注入
+      Spring boot study-2 数据注入-配置文件
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -146,7 +146,7 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>配置文件注入流程<br> 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor<br> 2 JavaBean (Person.class Dog.class)定义实体类<br> 3 配置文件 application.yml或application.properties<br> 4 在test(单元测试)运行TestPersonApplicationTests.class观察结果</p>
+            <p>配置文件数据注入的流程<br> 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor<br> 2 JavaBean (Person.class Dog.class)定义实体类<br> 3 配置文件 application.yml或application.properties<br> 4 在test(单元测试)运行TestPersonApplicationTests.class观察结果</p>
 <a id="more"></a>
 
 <h3 id="一、添加依赖"><a href="#一、添加依赖" class="headerlink" title="一、添加依赖"></a>一、添加依赖</h3><p>新建springboot maven项目并在pom.xml中添加spring-boot-configuration-processor</p>
@@ -175,8 +175,8 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年07月28日 15:03</p>
-        <p>原始链接： <a class="post-url" href="/2019/07/28/190728-Spspringboot/" title="Spring boot study-2 配置文件注入">https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/</a></p>
+        <p>最后更新： 2019年07月28日 15:06</p>
+        <p>原始链接： <a class="post-url" href="/2019/07/28/190728-Spspringboot/" title="Spring boot study-2 数据注入-配置文件">https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/</a></p>
         <footer>
             <a href="https://zyz-1998.github.io">
                 <img src="/images/logo.png" alt="ZYZ">
@@ -233,7 +233,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/&title=《Spring boot study-2 配置文件注入》 — ZYZ BLOG&pic=/images/my_img/190725.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/&title=《Spring boot study-2 数据注入-配置文件》 — ZYZ BLOG&pic=/images/my_img/190725.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -243,7 +243,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/&title=《Spring boot study-2 配置文件注入》 — ZYZ BLOG&source=配置文件注入流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 JavaBe..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/&title=《Spring boot study-2 数据注入-配置文件》 — ZYZ BLOG&source=配置文件数据注入的流程 1 导入配置文件处理器，pom.xml 添加依赖spring-boot-configuration-processor 2 Jav..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -253,7 +253,7 @@
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spring boot study-2 配置文件注入》 — ZYZ BLOG&url=https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/&via=https://zyz-1998.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spring boot study-2 数据注入-配置文件》 — ZYZ BLOG&url=https://zyz-1998.github.io/2019/07/28/190728-Spspringboot/&via=https://zyz-1998.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
