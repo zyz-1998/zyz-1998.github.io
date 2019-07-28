@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ZYZ BLOG">
 <meta property="og:description" content="详细的将自己搭建博客的过程记录了下，主要是出于两方面考虑：第一，希望能够对同样打算建博客的朋友有所帮助。第二，为自己写博客立起点，让自己养成写博客的习惯，将平日学到的进行总结，避免遗忘。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-25T01:38:18.239Z">
+<meta property="og:updated_time" content="2019-07-28T00:36:34.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github 博客搭建历程">
 <meta name="twitter:description" content="详细的将自己搭建博客的过程记录了下，主要是出于两方面考虑：第一，希望能够对同样打算建博客的朋友有所帮助。第二，为自己写博客立起点，让自己养成写博客的习惯，将平日学到的进行总结，避免遗忘。">
@@ -148,8 +148,8 @@
             
             <p>详细的将自己搭建博客的过程记录了下，主要是出于两方面考虑：<br>第一，希望能够对同样打算建博客的朋友有所帮助。<br>第二，为自己写博客立起点，让自己养成写博客的习惯，将平日学到的进行总结，避免遗忘。</p>
 <a id="more"></a>
-<h3 id="一、-准备工作"><a href="#一、-准备工作" class="headerlink" title="一、 准备工作"></a>一、 准备工作</h3><p>1）node.js 安装<br>下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a><br>2) git 安装<br>下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a><br>3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名</p>
-<h3 id="二、-git配置"><a href="#二、-git配置" class="headerlink" title="二、 git配置"></a>二、 git配置</h3><p>该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。</p>
+<h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><p>1）node.js 安装<br>下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a><br>2) git 安装<br>下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a><br>3) github注册并建立一个名为123.github.io的仓库，123为你的github账户名</p>
+<h3 id="二、git配置"><a href="#二、git配置" class="headerlink" title="二、git配置"></a>二、git配置</h3><p>该步骤主要目的：将git和github连接起来，便于今后博客的上传部署等操作。</p>
 <h4 id="2-1-设置账户和邮箱"><a href="#2-1-设置账户和邮箱" class="headerlink" title="2.1 设置账户和邮箱"></a>2.1 设置账户和邮箱</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;your name&quot;</span><br><span class="line">$ git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-2-生成并获取ssh秘钥"><a href="#2-2-生成并获取ssh秘钥" class="headerlink" title="2.2 生成并获取ssh秘钥"></a>2.2 生成并获取ssh秘钥</h4><p>git bash 输入命令：</p>
@@ -162,7 +162,7 @@
 <p>登录github账户，选择Personal settings &gt; SSH and GPG keys，添加秘钥</p>
 <h4 id="2-4-验证链接"><a href="#2-4-验证链接" class="headerlink" title="2.4 验证链接"></a>2.4 验证链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi xxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 
-<h3 id="三、-hexo安装配置"><a href="#三、-hexo安装配置" class="headerlink" title="三、 hexo安装配置"></a>三、 hexo安装配置</h3><h4 id="3-1-安装"><a href="#3-1-安装" class="headerlink" title="3.1 安装"></a>3.1 安装</h4><p>首先建立一个hexo文件夹作为安装目录，git bash【在hexo文件夹也就是你的安装位置打开】<br>输入下列命令</p>
+<h3 id="三、hexo安装配置"><a href="#三、hexo安装配置" class="headerlink" title="三、hexo安装配置"></a>三、hexo安装配置</h3><h4 id="3-1-安装"><a href="#3-1-安装" class="headerlink" title="3.1 安装"></a>3.1 安装</h4><p>首先建立一个hexo文件夹作为安装目录，git bash【在hexo文件夹也就是你的安装位置打开】<br>输入下列命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g //安装hexo</span><br><span class="line">hexo init blog  //hexo初始化于blog文件夹</span><br><span class="line">cd blog</span><br><span class="line">npm install //安装相关依赖包</span><br><span class="line">hexo server //本地启动hexo【用作博客发布前本地预览】</span><br><span class="line">npm install hexo-deployer-git --save   //使用git方式进行部署博客所需插件</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h4><p>_config.yml 站点配置文件<br>package.json 主要描述hexo版本信息及安装的依赖<br>打开_config.yml文件找到deploy并参照下方进行修改</p>
@@ -172,13 +172,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
 
 <p>此时就可以在浏览器输入<a href="https://123.github.io/打开hexo默认界面。" target="_blank" rel="noopener">https://123.github.io/打开hexo默认界面。</a></p>
-<h3 id="四、-hexo更换主题"><a href="#四、-hexo更换主题" class="headerlink" title="四、 hexo更换主题"></a>四、 hexo更换主题</h3><p>访问hexo官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> 在主题页面有许多主题，这里我选择的是miho<br>miho地址：<a href="https://blog.minhow.com/" target="_blank" rel="noopener">https://blog.minhow.com/</a><br>里面有详细的操作流程，这里就不再赘述。</p>
-<h3 id="五、-常用命令总结"><a href="#五、-常用命令总结" class="headerlink" title="五、 常用命令总结"></a>五、 常用命令总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的博客&quot; //新建文章,在blog\source\_posts会生成对应的md文件</span><br><span class="line">hexo new page &quot;pageName&quot; //新建页面，blog\source中生成相应的pageName文件夹</span><br><span class="line">hexo g == hexo generate //生成静态网页</span><br><span class="line">hexo s == hexo server //启动服务预览</span><br><span class="line">hexo d == hexo deploy //开始部署</span><br><span class="line">以上是文章摘要 &lt;!--more--&gt; 以下是余下全文 //设置文章摘要</span><br></pre></td></tr></table></figure>
+<h3 id="四、hexo更换主题"><a href="#四、hexo更换主题" class="headerlink" title="四、hexo更换主题"></a>四、hexo更换主题</h3><p>访问hexo官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> 在主题页面有许多主题，这里我选择的是miho<br>miho地址：<a href="https://blog.minhow.com/" target="_blank" rel="noopener">https://blog.minhow.com/</a><br>里面有详细的操作流程，这里就不再赘述。</p>
+<h3 id="五、常用命令总结"><a href="#五、常用命令总结" class="headerlink" title="五、常用命令总结"></a>五、常用命令总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的博客&quot; //新建文章,在blog\source\_posts会生成对应的md文件</span><br><span class="line">hexo new page &quot;pageName&quot; //新建页面，blog\source中生成相应的pageName文件夹</span><br><span class="line">hexo g == hexo generate //生成静态网页</span><br><span class="line">hexo s == hexo server //启动服务预览</span><br><span class="line">hexo d == hexo deploy //开始部署</span><br><span class="line">以上是文章摘要 &lt;!--more--&gt; 以下是余下全文 //设置文章摘要</span><br></pre></td></tr></table></figure>
 
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年07月25日 09:38</p>
+        <p>最后更新： 2019年07月28日 08:36</p>
         <p>原始链接： <a class="post-url" href="/2019/07/17/hexo+github/" title="hexo+github 博客搭建历程">https://zyz-1998.github.io/2019/07/17/hexo+github/</a></p>
         <footer>
             <a href="https://zyz-1998.github.io">
@@ -296,7 +296,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、-准备工作"><span class="post-toc-text">一、 准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、-git配置"><span class="post-toc-text">二、 git配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-设置账户和邮箱"><span class="post-toc-text">2.1 设置账户和邮箱</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-生成并获取ssh秘钥"><span class="post-toc-text">2.2 生成并获取ssh秘钥</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-配置github-ssh"><span class="post-toc-text">2.3 配置github ssh</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-验证链接"><span class="post-toc-text">2.4 验证链接</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、-hexo安装配置"><span class="post-toc-text">三、 hexo安装配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-安装"><span class="post-toc-text">3.1 安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-配置"><span class="post-toc-text">3.2 配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-部署"><span class="post-toc-text">3.3 部署</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、-hexo更换主题"><span class="post-toc-text">四、 hexo更换主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、-常用命令总结"><span class="post-toc-text">五、 常用命令总结</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、准备工作"><span class="post-toc-text">一、准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、git配置"><span class="post-toc-text">二、git配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-设置账户和邮箱"><span class="post-toc-text">2.1 设置账户和邮箱</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-生成并获取ssh秘钥"><span class="post-toc-text">2.2 生成并获取ssh秘钥</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-配置github-ssh"><span class="post-toc-text">2.3 配置github ssh</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-验证链接"><span class="post-toc-text">2.4 验证链接</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、hexo安装配置"><span class="post-toc-text">三、hexo安装配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-安装"><span class="post-toc-text">3.1 安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-配置"><span class="post-toc-text">3.2 配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-部署"><span class="post-toc-text">3.3 部署</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、hexo更换主题"><span class="post-toc-text">四、hexo更换主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、常用命令总结"><span class="post-toc-text">五、常用命令总结</span></a></li></ol>
         </nav>
     </aside>
     
@@ -376,7 +376,7 @@
             <a class="category-link" href="/categories/Java/">Java</a><a class="category-link" href="/categories/前端/">前端</a><a class="category-link" href="/categories/博客/">博客</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/Springboot/" style="font-size: 10px;">Springboot</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+            <a href="/tags/Springboot/" style="font-size: 10px;">Springboot</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/stylus/" style="font-size: 10px;">stylus</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -409,7 +409,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/Springboot/" style="font-size: 10px;">Springboot</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+            <a href="/tags/Springboot/" style="font-size: 10px;">Springboot</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/stylus/" style="font-size: 10px;">stylus</a>
         </div>
     </div>
 </div>
