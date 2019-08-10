@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.3.0">
+  <link rel="mask-icon" href="/images/favicon.ico?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="因为最近实习涉及前端方面东西还是比较多的，故对相关知识进行下简单的总结，并用bootstrap这个比较流行的框架设计了一个简单的网站，主要页面包括主页、相册、归档、文章等页面，以便对其有更深的理解。资源地址：https://github.com/zyz-1998/project/tree/master/bootstrap_test">
+<meta name="keywords" content="bootstrap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap学习与实践">
+<meta property="og:url" content="https://zyz-1998.github.io/2019/07/18/190718-bootstrap_study/index.html">
+<meta property="og:site_name" content="ZYZ BLOG">
+<meta property="og:description" content="因为最近实习涉及前端方面东西还是比较多的，故对相关知识进行下简单的总结，并用bootstrap这个比较流行的框架设计了一个简单的网站，主要页面包括主页、相册、归档、文章等页面，以便对其有更深的理解。资源地址：https://github.com/zyz-1998/project/tree/master/bootstrap_test">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190718-1.jpg">
+<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190718-2.jpg">
+<meta property="og:updated_time" content="2019-07-28T00:36:37.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap学习与实践">
+<meta name="twitter:description" content="因为最近实习涉及前端方面东西还是比较多的，故对相关知识进行下简单的总结，并用bootstrap这个比较流行的框架设计了一个简单的网站，主要页面包括主页、相册、归档、文章等页面，以便对其有更深的理解。资源地址：https://github.com/zyz-1998/project/tree/master/bootstrap_test">
+<meta name="twitter:image" content="https://zyz-1998.github.io/images/my_img/190718-1.jpg">
+  <link rel="canonical" href="https://zyz-1998.github.io/2019/07/18/190718-bootstrap_study/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Bootstrap学习与实践 | ZYZ BLOG</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZYZ BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">ZYZ BLOG</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zyz-1998.github.io/2019/07/18/190718-bootstrap_study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZYZ">
+      <meta itemprop="description" content="ZYZ's BLOG | 学习记录">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZYZ BLOG">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">Bootstrap学习与实践
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-18 19:31:22" itemprop="dateCreated datePublished" datetime="2019-07-18T19:31:22+08:00">2019-07-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-07-28 08:36:37" itemprop="dateModified" datetime="2019-07-28T08:36:37+08:00">2019-07-28</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>因为最近实习涉及前端方面东西还是比较多的，故对相关知识进行下简单的总结，并用bootstrap这个比较流行的框架设计了一个简单的网站，主要页面包括主页、相册、归档、文章等页面，以便对其有更深的理解。<br>资源地址：<a href="https://github.com/zyz-1998/project/tree/master/bootstrap_test" target="_blank" rel="noopener">https://github.com/zyz-1998/project/tree/master/bootstrap_test</a></p>
+<a id="more"></a>
+<p>部分页面截图<br><img src="/images/my_img/190718-1.jpg" alt><br><img src="/images/my_img/190718-2.jpg" alt></p>
+<h3 id="一-HTML5与CSS3"><a href="#一-HTML5与CSS3" class="headerlink" title="一. HTML5与CSS3"></a>一. HTML5与CSS3</h3><h4 id="1-1-html5"><a href="#1-1-html5" class="headerlink" title="1.1 html5"></a>1.1 html5</h4><p>Html5作为一种标记语言，对于我们进行网页内容结构的划分有着极其重要的帮助，通过最近的实际应用我对它最大的体会就是能够快速架构出一个网站的基本逻辑结构与内容，这一点在html5中推出的一系列语义标签中体现的尤为突出，有着良好结构与命名规范的页面在我们进行构建样式和定义网页行为时理解起来更加容易。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;&quot; content=&quot;&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;                  #与main的区别，body定义为表示文档内容</span><br><span class="line">    &lt;div id=&quot;container&quot;&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;nav&gt;&lt;/nav&gt;     #导航栏，html5规范中不允许将其嵌入address标签中使用</span><br><span class="line">        &lt;/header&gt;</span><br><span class="line">        &lt;main&gt;&lt;/main&gt;       #每个页面中只能用一次，用以标记页面主要内容</span><br><span class="line">        &lt;aside&gt;&lt;/aside&gt;     #侧边栏，具有独立性用以对页面进行补充</span><br><span class="line">        &lt;footer&gt;&lt;/footer&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>除上述内容，还有许多标签，对于这些标签理解其意义与区别十分重要，尤其在兼容性这方面，例如如下区别：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;header&quot;&gt;   &lt;header&gt;</span><br><span class="line">&lt;div id=&quot;footer&quot;&gt;   &lt;footer&gt;</span><br></pre></td></tr></table></figure>
+
+<p>前后两者在实际应用中并无太大差别，后者是html5中的新规范，对于我们进行更加清晰的网页布局有着很多帮助，但是也存在着旧浏览器不识别的情况。<br><code>补充</code><br>figure标签规定独立的流内容（图像、图表、照片、代码等等），其内容应与主内容有关，但如果被删除，不应对文档流产生影响。<br>article标签定义独立内容<br>section标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分</p>
+<p>更多HTML的知识建议访问W3c School浏览文档，便于有更清晰的认识</p>
+<h4 id="1-2-css3"><a href="#1-2-css3" class="headerlink" title="1.2 css3"></a>1.2 css3</h4><p>ccs构建了网页的样式，缤纷多彩的网页就是通过其实现的，就好像盖房子html搭建了整个网页的结构，接下来房子的装饰就交给了css，css3通过模块化，就像装修一样，将网页的装饰分成盒模型、选择器、文本效果、布局等方式，让我们更容易理解和上手。列举几个最近用到的样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background-image: linear-gradient(90deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%) !important;</span><br><span class="line">#构建一条线性渐变的背景，由浏览器处理渲染，不像加载图片，加载时间会受到图片大小影响</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-居中的几种方法："><a href="#1-3-居中的几种方法：" class="headerlink" title="1.3 居中的几种方法："></a>1.3 居中的几种方法：</h4><p>第一，水平居中：(1)margin:0 auto; (2)通过flex来实现<br>第二，垂直居中：(1)通过盒模型调节margin来实现，(2)通过调节父元素padding;(3)当自己高度和父容器高度未知时, 通过绝对定位：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parentElement&#123; position:relative; &#125; </span><br><span class="line">childElement&#123; position: absolute; top: 50%; transform: translateY(-50%); &#125;</span><br></pre></td></tr></table></figure>
+
+<p>(4)父容器只有一个元素且父元素高度已知时，通过相对定位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parent&#123; height:xxx; &#125; </span><br><span class="line">.child&#123; position: relative; top: 50%; transform: translateY(-50%); &#125;</span><br></pre></td></tr></table></figure>
+
+<p>(5)还可以用Flex布局：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parentElement&#123; display:flex; display:-webkit-flex; align-items:center; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>第三，水平垂直居中：通过tansform：translate(-50%,-50%)来实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);</span><br></pre></td></tr></table></figure>
+
+<p><code>html内容超出了div或p的宽度如何换行让内容自动换行</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">word-wrap：break-word；</span><br><span class="line">overflow：hidden</span><br></pre></td></tr></table></figure>
+
+<p><code>对于css需要充分理解各属性的区别和应用场景。</code></p>
+<h3 id="二-JQuery"><a href="#二-JQuery" class="headerlink" title="二. JQuery"></a>二. JQuery</h3><p>JQuery是一个JScript函数库，BootStrap是一个基于html、css、JScript的前端框架，移动设备优先原则的响应式设计。并有着众多的UI编辑工具</p>
+<h4 id="2-1-JQuery"><a href="#2-1-JQuery" class="headerlink" title="2.1 JQuery"></a>2.1 JQuery</h4><p>JQuery重点——AJAX异步，能够在不重载整个页面的情况下，加载数据。<br><code>load()方法</code>从服务器加载数据，并把返回的数据放入被选元素中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).load(URL,data,callback);</span><br></pre></td></tr></table></figure>
+
+<p><code>get()方法</code>通过 HTTP GET 请求从服务器上请求数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.get(URL,callback);</span><br></pre></td></tr></table></figure>
+
+<p><code>post() 方法</code>通过 HTTP POST 请求从服务器上请求数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.post(URL,data,callback);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-Jquery显示页面进度"><a href="#2-2-Jquery显示页面进度" class="headerlink" title="2.2 Jquery显示页面进度"></a>2.2 Jquery显示页面进度</h4><p>在应用中实现了一个简单的显示页面进度功能，实际效果可下载本文顶部资源链接查看<br>主要公式： 当前页面的高度 = 获取当前窗口顶部至页面顶部的高度 + 当前窗口高度<br>$(document).height()  = $(window).scrollTop() + $(window).height()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(document).scroll(function()&#123;</span><br><span class="line">      var d_h = $(document).height();           #获取当前页面的高度</span><br><span class="line">      var c_h = $(window).height();             #获取当前窗口高度</span><br><span class="line">      var c_t_h = $(window).scrollTop();        #获取当前窗口顶部至页面顶部的高度</span><br><span class="line">      var schedule = c_t_h / (d_h-c_h-0.5);</span><br><span class="line">      var str=Number(schedule*100).toFixed();   #将小数转换为百分数</span><br><span class="line">            str+=&quot;%&quot;;</span><br><span class="line">      $(&quot;#p_sch&quot;).text(str);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="三-Bootstrap"><a href="#三-Bootstrap" class="headerlink" title="三. Bootstrap"></a>三. Bootstrap</h3><p>在实际应用中比较喜欢其样式风格、及网格布局，对于他的UI编辑器工具简单体会下，感觉比较不错，可以通过快速搭建好网站，然后再进行进一步地完善，这里因为我在练习中并没有实际应用，所以不再赘述，bootstrap为我们提供了许多基本组件，诸如下拉菜单、按钮组、导航栏、分页、表单组、进度条等，对于我们应用十分方便。列举部分实际应用的代码<br>轮播，这里我用作头部背景，在相册页面实现，主页头部背景采用background-img的方式实现，通过设置header的padding-bottom百分比的形式与最小高度可以不影响网页的响应式设计，但图片比例有问题时可能会出现拉伸现象。</p>
+<h4 id="3-1-轮播"><a href="#3-1-轮播" class="headerlink" title="3.1 轮播"></a>3.1 轮播</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;myCarousel&quot; class=&quot;carousel slide&quot; style=&quot;width:100%;&quot;&gt;</span><br><span class="line">                  &lt;!-- 轮播（Carousel）指标 --&gt;</span><br><span class="line">                  &lt;ol class=&quot;carousel-indicators&quot;&gt;</span><br><span class="line">                     &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;</span><br><span class="line">                     &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;</span><br><span class="line">                     &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;/ol&gt;   </span><br><span class="line">                  &lt;!-- 轮播（Carousel）项目 --&gt;</span><br><span class="line">                  &lt;div class=&quot;carousel-inner&quot;&gt;</span><br><span class="line">                     &lt;div class=&quot;item active&quot;&gt;</span><br><span class="line">                        &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/15.jpg&quot; alt=&quot;First slide&quot;&gt;&lt;/a&gt;</span><br><span class="line">                     &lt;/div&gt;</span><br><span class="line">                     &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">                        &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/16.jpg&quot; alt=&quot;Second slide&quot;&gt;</span><br><span class="line">                        &lt;div class=&quot;carousel-caption sr-only&quot;&gt;标题&lt;/div&gt;</span><br><span class="line">                        &lt;/a&gt;</span><br><span class="line">                     &lt;/div&gt;</span><br><span class="line">                     &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">                        &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/17.jpg&quot; alt=&quot;Third slide&quot;&gt;&lt;/a&gt;</span><br><span class="line">                     &lt;/div&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &lt;!-- 轮播（Carousel）导航 --&gt;</span><br><span class="line">                  &lt;a class=&quot;left carousel-control&quot; href=&quot;#myCarousel&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;</span><br><span class="line">                      &lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt;</span><br><span class="line">                  &lt;/a&gt;</span><br><span class="line">                  &lt;a class=&quot;right carousel-control&quot; href=&quot;#myCarousel&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;</span><br><span class="line">                      &lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt;</span><br><span class="line">                  &lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-导航栏"><a href="#3-2-导航栏" class="headerlink" title="3.2 导航栏"></a>3.2 导航栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class=&quot;navbar navbar-default&quot; style=&quot;position:fixed;top: 0;left: 0;width: 100%;opacity:0.8;&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;container-fluid&quot;&gt;</span><br><span class="line">              &lt;!-- Brand and toggle get grouped for better mobile display --&gt;</span><br><span class="line">              &lt;div class=&quot;navbar-header&quot;&gt;</span><br><span class="line">                &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot; aria-expanded=&quot;false&quot;&gt;</span><br><span class="line">                  &lt;!-- sr-only Bootstrap的辅助类；代表元素只在屏幕阅读器中显示：sc (screen-reader)  --&gt;</span><br><span class="line">                  &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;</span><br><span class="line">                  &lt;!-- icon-bar 屏幕宽度小于一定程度时，导航栏变为可折叠形式 --&gt;</span><br><span class="line">                  &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</span><br><span class="line">                  &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</span><br><span class="line">                  &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</span><br><span class="line">                &lt;/button&gt;</span><br><span class="line">                &lt;a class=&quot;navbar-brand&quot; href=&quot;Home.html&quot;&gt;ZYZ&lt;/a&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;</span><br><span class="line">              &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;</span><br><span class="line">                &lt;ul class=&quot;nav navbar-nav&quot;&gt;</span><br><span class="line">                  &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Test&lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">                &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;Home.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;Archievs.html&quot;&gt;Archievs&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;Album.html&quot;&gt;Album&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li class=&quot;dropdown&quot;&gt;</span><br><span class="line">                    &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;About&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span><br><span class="line">                    &lt;ul class=&quot;dropdown-menu&quot;&gt;</span><br><span class="line">                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                      &lt;!-- role是html5中的新标签，增加语义性 --&gt;</span><br><span class="line">                      &lt;li role=&quot;separator&quot; class=&quot;divider&quot;&gt;&lt;/li&gt;</span><br><span class="line">                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                  &lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">              &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;</span><br><span class="line">            &lt;/div&gt;&lt;!-- /.container-fluid --&gt;</span><br><span class="line">            &lt;/nav&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-分页"><a href="#3-3-分页" class="headerlink" title="3.3 分页"></a>3.3 分页</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">第一种：在归档页面有实现</span><br><span class="line">&lt;div class=&quot;col-xs-12 col-sm-12 col-md-12 page11&quot;&gt;</span><br><span class="line">            &lt;ul class=&quot;pagination pagination-lg&quot;&gt;</span><br><span class="line">              &lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;background-color:#D5D5D5;color:#f79533&quot;&gt;1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#ef4e7b&quot;&gt;2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#5073b8&quot;&gt;3&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#1098ad&quot;&gt;4&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot; style=&quot;color:#07b39b&quot;&gt;5&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li &gt;&lt;a href=&quot;#&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">第二种：在page页面有实现</span><br><span class="line">&lt;div class=&quot;col-xs-12 col-sm-12 col-md-12 page11&quot;&gt;</span><br><span class="line">              &lt;ul class=&quot;pager&quot;&gt;</span><br><span class="line">                &lt;li class=&quot;previous&quot;&gt;&lt;a href=&quot;#&quot;&gt;&amp;larr; Previous&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li class=&quot;next&quot;&gt;&lt;a href=&quot;#&quot;&gt;Next &amp;rarr;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">              &lt;/ul&gt;</span><br><span class="line">           &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/bootstrap/" rel="tag"># bootstrap</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/07/18/Bootstrap 练手实例/" rel="next" title="Bootstrap练手实例">
+                  <i class="fa fa-chevron-left"></i> Bootstrap练手实例
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/07/25/190725-SpringBoot-1/" rel="prev" title="Spring boot study-1 入门（hello word)">
+                  Spring boot study-1 入门（hello word) <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="ZYZ">
+  <p class="site-author-name" itemprop="name">ZYZ</p>
+  <div class="site-description motion-element" itemprop="description">ZYZ's BLOG | 学习记录</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-HTML5与CSS3"><span class="nav-text">一. HTML5与CSS3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-html5"><span class="nav-text">1.1 html5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-css3"><span class="nav-text">1.2 css3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-居中的几种方法："><span class="nav-text">1.3 居中的几种方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-JQuery"><span class="nav-text">二. JQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-JQuery"><span class="nav-text">2.1 JQuery</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Jquery显示页面进度"><span class="nav-text">2.2 Jquery显示页面进度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-Bootstrap"><span class="nav-text">三. Bootstrap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-轮播"><span class="nav-text">3.1 轮播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-导航栏"><span class="nav-text">3.2 导航栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-分页"><span class="nav-text">3.3 分页</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZYZ</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
