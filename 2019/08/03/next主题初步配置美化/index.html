@@ -20,6 +20,8 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2">
 
 
 <script id="hexo-configurations">
@@ -44,8 +46,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: './public/search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -63,7 +65,7 @@
 <meta property="og:site_name" content="ZYZ BLOG">
 <meta property="og:description" content="最近突然迷上了next主题，故换上这个新装，并初步进行了相关文章、本地搜索、页面点击效果、文章置顶、网页标签图标等设置，算是简单的完成了这次的主题的配置，后期还待优化，毕竟next主题自定义和扩展都很丰富。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T07:41:53.065Z">
+<meta property="og:updated_time" content="2019-08-10T08:10:32.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="next主题初步配置美化">
 <meta name="twitter:description" content="最近突然迷上了next主题，故换上这个新装，并初步进行了相关文章、本地搜索、页面点击效果、文章置顶、网页标签图标等设置，算是简单的完成了这次的主题的配置，后期还待优化，毕竟next主题自定义和扩展都很丰富。">
@@ -206,9 +208,36 @@
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+  </div>
 </div>
     </header>
 
@@ -273,7 +302,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-10 15:41:53" itemprop="dateModified" datetime="2019-08-10T15:41:53+08:00">2019-08-10</time>
+                <time title="修改时间：2019-08-10 16:10:32" itemprop="dateModified" datetime="2019-08-10T16:10:32+08:00">2019-08-10</time>
               </span>
             
           
@@ -313,10 +342,11 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  &#123;&#123; popular_posts( &#123;&#125; , post ) &#125;&#125;  </span><br><span class="line">  &#123;######################&#125;</span><br><span class="line">  &#123;### END POST BLOCK ###&#125;</span><br><span class="line">  &#123;######################&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-添加本地搜索功能"><a href="#2-添加本地搜索功能" class="headerlink" title="2. 添加本地搜索功能"></a>2. 添加本地搜索功能</h3><p>插件：hexo-generator-search</p>
-<p>修改站点配置文件添加如下</p>
+<p><code>npm install hexo-generator-search --save</code></p>
+<p>在站点配置文件_config.yml添加如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Search </span><br><span class="line">search:</span><br><span class="line">  path: ./public/search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 1000</span><br></pre></td></tr></table></figure>
 
-<p>修改主题配置文件如下</p>
+<p>修改主题配置文件_config.yml如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-添加页面点击效果"><a href="#3-添加页面点击效果" class="headerlink" title="3. 添加页面点击效果"></a>3. 添加页面点击效果</h3><p>修改_layout.swig，并在\themes\next\layout_layout.swig文件末尾添加</p>
@@ -335,6 +365,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon.ico</span><br><span class="line">  medium: /images/favicon.ico</span><br><span class="line">  apple_touch_icon: /images/favicon.ico</span><br><span class="line">  safari_pinned_tab: /images/favicon.ico</span><br></pre></td></tr></table></figure>
 
 <p>这里用的都是一张图片，next原配置也是用的一张图片只是格式大小不同，我试过直接设置favicon: /images/favicon.ico 但是会报错。</p>
+<h3 id="6-设置网页加载进度条"><a href="#6-设置网页加载进度条" class="headerlink" title="6. 设置网页加载进度条"></a>6. 设置网页加载进度条</h3><p>这里用到的是theme-next-pace<br>地址如下：<a href="https://github.com/theme-next/theme-next-pace" target="_blank" rel="noopener">https://github.com/theme-next/theme-next-pace</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: true</span><br><span class="line">  # Themes list:</span><br><span class="line">  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span><br><span class="line">  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span><br><span class="line">  theme: flash</span><br></pre></td></tr></table></figure>
+
 <p>参考资料</p>
 <p><a href="https://xian6ge.cn/posts/5b8c41e7/" target="_blank" rel="noopener">https://xian6ge.cn/posts/5b8c41e7/</a>  </p>
 <p><a href="https://www.aisun.org/2017/10/hexo-next+dingzhi/" target="_blank" rel="noopener">https://www.aisun.org/2017/10/hexo-next+dingzhi/</a></p>
@@ -500,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-添加相关文章功能"><span class="nav-text">1. 添加相关文章功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-添加本地搜索功能"><span class="nav-text">2. 添加本地搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-添加页面点击效果"><span class="nav-text">3. 添加页面点击效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-添加文章置顶"><span class="nav-text">4. 添加文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-添加网页标签图标"><span class="nav-text">5. 添加网页标签图标</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-添加相关文章功能"><span class="nav-text">1. 添加相关文章功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-添加本地搜索功能"><span class="nav-text">2. 添加本地搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-添加页面点击效果"><span class="nav-text">3. 添加页面点击效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-添加文章置顶"><span class="nav-text">4. 添加文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-添加网页标签图标"><span class="nav-text">5. 添加网页标签图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-设置网页加载进度条"><span class="nav-text">6. 设置网页加载进度条</span></a></li></ol></div>
             
 
           </div>
@@ -582,6 +615,8 @@
 
 
 
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
 
 
 
