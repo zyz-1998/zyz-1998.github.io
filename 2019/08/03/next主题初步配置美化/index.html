@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="ZYZ BLOG">
 <meta property="og:description" content="最近突然迷上了next主题，故换上这个新装，并初步进行了相关文章、本地搜索、页面点击效果、文章置顶、网页标签图标等设置，算是简单的完成了这次的主题的配置，后期还待优化，毕竟next主题自定义和扩展都很丰富。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T09:28:31.104Z">
+<meta property="og:updated_time" content="2019-08-12T00:23:31.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="next主题初步配置美化">
 <meta name="twitter:description" content="最近突然迷上了next主题，故换上这个新装，并初步进行了相关文章、本地搜索、页面点击效果、文章置顶、网页标签图标等设置，算是简单的完成了这次的主题的配置，后期还待优化，毕竟next主题自定义和扩展都很丰富。">
@@ -312,7 +312,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-10 17:28:31" itemprop="dateModified" datetime="2019-08-10T17:28:31+08:00">2019-08-10</time>
+                <time title="修改时间：2019-08-12 08:23:31" itemprop="dateModified" datetime="2019-08-12T08:23:31+08:00">2019-08-12</time>
               </span>
             
           
@@ -391,33 +391,16 @@
 
 <p>旧版可以通过修改模板/themes/next/layout/_macro/post.swig，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 # 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
 <h3 id="8-设置侧边栏"><a href="#8-设置侧边栏" class="headerlink" title="8. 设置侧边栏"></a>8. 设置侧边栏</h3><p>修改主题配置文件，搜索social:找到如下位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/yourname || github</span><br><span class="line">  E-Mail: https://email.com/yourname || envelope</span><br><span class="line">  #Weibo: https://weibo.com/yourname || weibo</span><br><span class="line">  #Google: https://plus.google.com/yourname || google</span><br><span class="line">  #Twitter: https://twitter.com/yourname || twitter</span><br><span class="line">  Facebook: https://www.facebook.com/ || facebook</span><br><span class="line">  Cloudmusic: https://music.163.com/#/user/home?id=247843674 || headphones</span><br><span class="line">  #VK Group: https://vk.com/yourname || vk</span><br><span class="line">  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow</span><br><span class="line">  #YouTube: https://youtube.com/yourname || youtube</span><br><span class="line">  #Instagram: https://instagram.com/yourname || instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || skype</span><br><span class="line"></span><br><span class="line">social_icons:</span><br><span class="line">  enable: true			#是否显示图标</span><br><span class="line">  icons_only: false		#仅显示图标</span><br><span class="line">  transition: false</span><br></pre></td></tr></table></figure>
+
+<p>格式如下<br>Cloudmusic: <a href="https://music.163.com/#/user/home?id=247843674" target="_blank" rel="noopener">https://music.163.com/#/user/home?id=247843674</a> || headphones<br>社交连接名称: 社交连接地址  || 社交连接图标<br>注意该图标必须是Font Awesome中的图标名称</p>
 <h3 id="9-关闭目录自动序列"><a href="#9-关闭目录自动序列" class="headerlink" title="9. 关闭目录自动序列"></a>9. 关闭目录自动序列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  # Automatically add list number to toc.</span><br><span class="line">  number: false	#设置为false即可</span><br></pre></td></tr></table></figure>
 
-<p>social:<br>  GitHub: <a href="https://github.com/yourname" target="_blank" rel="noopener">https://github.com/yourname</a> || github<br>  E-Mail: <a href="https://email.com/yourname" target="_blank" rel="noopener">https://email.com/yourname</a> || envelope</p>
-<p>  #Weibo: <a href="https://weibo.com/yourname" target="_blank" rel="noopener">https://weibo.com/yourname</a> || weibo</p>
-<p>  #Google: <a href="https://plus.google.com/yourname" target="_blank" rel="noopener">https://plus.google.com/yourname</a> || google</p>
-<p>  #Twitter: <a href="https://twitter.com/yourname" target="_blank" rel="noopener">https://twitter.com/yourname</a> || twitter<br>  Facebook: <a href="https://www.facebook.com/" target="_blank" rel="noopener">https://www.facebook.com/</a> || facebook<br>  Cloudmusic: <a href="https://music.163.com/#/user/home?id=247843674" target="_blank" rel="noopener">https://music.163.com/#/user/home?id=247843674</a> || headphones</p>
-<p>  #VK Group: <a href="https://vk.com/yourname" target="_blank" rel="noopener">https://vk.com/yourname</a> || vk</p>
-<p>  #StackOverflow: <a href="https://stackoverflow.com/yourname" target="_blank" rel="noopener">https://stackoverflow.com/yourname</a> || stack-overflow</p>
-<p>  #YouTube: <a href="https://youtube.com/yourname" target="_blank" rel="noopener">https://youtube.com/yourname</a> || youtube</p>
-<p>  #Instagram: <a href="https://instagram.com/yourname" target="_blank" rel="noopener">https://instagram.com/yourname</a> || instagram</p>
-<p>  #Skype: skype:yourname?call|chat || skype</p>
-<p>social_icons:<br>  enable: true            #是否显示图标<br>  icons_only: false        #仅显示图标<br>  transition: false</p>
-<pre><code>格式如下
-Cloudmusic: https://music.163.com/#/user/home?id=247843674 || headphones
-社交连接名称: 社交连接地址  || 社交连接图标
-注意该图标必须是Font Awesome中的图标名称
+<p>参考资料</p>
+<p><a href="https://xian6ge.cn/posts/5b8c41e7/" target="_blank" rel="noopener">https://xian6ge.cn/posts/5b8c41e7/</a>  </p>
+<p><a href="https://www.aisun.org/2017/10/hexo-next+dingzhi/" target="_blank" rel="noopener">https://www.aisun.org/2017/10/hexo-next+dingzhi/</a></p>
+<p><a href="https://blog.csdn.net/nightmare_dimple/article/details/86661502" target="_blank" rel="noopener">https://blog.csdn.net/nightmare_dimple/article/details/86661502</a></p>
 
-
-
-参考资料
-
-https://xian6ge.cn/posts/5b8c41e7/  
-
-https://www.aisun.org/2017/10/hexo-next+dingzhi/
-
-https://blog.csdn.net/nightmare_dimple/article/details/86661502
-</code></pre>
     </div>
 
     
