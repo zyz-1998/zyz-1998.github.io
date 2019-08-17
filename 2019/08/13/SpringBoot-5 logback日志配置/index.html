@@ -55,22 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解其不是什么新框架，而是已有框架的整合与配置简化。">
+  <meta name="description" content="SpringBoot内部集成了LogBack日志依赖，SpringBoot默认使用LogBack记录日志信息，默认根据logback-springboot.xml配置内容来输出到控制台和文件之中。">
 <meta name="keywords" content="Springboot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot-1. hello word实例">
-<meta property="og:url" content="https://zyz-1998.github.io/2019/07/25/SpringBoot-1 hello word实例/index.html">
+<meta property="og:title" content="SpringBoot-5. logback日志配置">
+<meta property="og:url" content="https://zyz-1998.github.io/2019/08/13/SpringBoot-5 logback日志配置/index.html">
 <meta property="og:site_name" content="ZYZ BLOG">
-<meta property="og:description" content="开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解其不是什么新框架，而是已有框架的整合与配置简化。">
+<meta property="og:description" content="SpringBoot内部集成了LogBack日志依赖，SpringBoot默认使用LogBack记录日志信息，默认根据logback-springboot.xml配置内容来输出到控制台和文件之中。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190725-1.jpg">
-<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190725-2.jpg">
-<meta property="og:updated_time" content="2019-08-10T00:13:27.107Z">
+<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190813-1.jpg">
+<meta property="og:updated_time" content="2019-08-17T09:32:35.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot-1. hello word实例">
-<meta name="twitter:description" content="开发工具：IntelliJ IDEASping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解其不是什么新框架，而是已有框架的整合与配置简化。">
-<meta name="twitter:image" content="https://zyz-1998.github.io/images/my_img/190725-1.jpg">
-  <link rel="canonical" href="https://zyz-1998.github.io/2019/07/25/SpringBoot-1 hello word实例/">
+<meta name="twitter:title" content="SpringBoot-5. logback日志配置">
+<meta name="twitter:description" content="SpringBoot内部集成了LogBack日志依赖，SpringBoot默认使用LogBack记录日志信息，默认根据logback-springboot.xml配置内容来输出到控制台和文件之中。">
+<meta name="twitter:image" content="https://zyz-1998.github.io/images/my_img/190813-1.jpg">
+  <link rel="canonical" href="https://zyz-1998.github.io/2019/08/13/SpringBoot-5 logback日志配置/">
 
 
 <script id="page-configurations">
@@ -84,7 +83,7 @@
   };
 </script>
 
-  <title>SpringBoot-1. hello word实例 | ZYZ BLOG</title>
+  <title>SpringBoot-5. logback日志配置 | ZYZ BLOG</title>
   
 
 
@@ -273,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zyz-1998.github.io/2019/07/25/SpringBoot-1 hello word实例/">
+    <link itemprop="mainEntityOfPage" href="https://zyz-1998.github.io/2019/08/13/SpringBoot-5 logback日志配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZYZ">
@@ -287,7 +286,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot-1. hello word实例
+          <h1 class="post-title" itemprop="name headline">SpringBoot-5. logback日志配置
 
             
           </h1>
@@ -304,7 +303,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 09:09:43" itemprop="dateCreated datePublished" datetime="2019-07-25T09:09:43+08:00">2019-07-25</time>
+              <time title="创建时间：2019-08-13 13:57:40" itemprop="dateCreated datePublished" datetime="2019-08-13T13:57:40+08:00">2019-08-13</time>
             </span>
           
             
@@ -315,7 +314,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-10 08:13:27" itemprop="dateModified" datetime="2019-08-10T08:13:27+08:00">2019-08-10</time>
+                <time title="修改时间：2019-08-17 17:32:35" itemprop="dateModified" datetime="2019-08-17T17:32:35+08:00">2019-08-17</time>
               </span>
             
           
@@ -352,23 +351,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>开发工具：IntelliJ IDEA<br>Sping Boot简介：Spring Boot是一个基于Java的开源框架，用于创建微服务、构建独立的生产就绪Spring应用。设计初衷在于简化spring应用的初始搭建与开发过程，通俗理解其不是什么新框架，而是已有框架的整合与配置简化。</p>
+        <p>SpringBoot内部集成了LogBack日志依赖，SpringBoot默认使用LogBack记录日志信息，默认根据logback-springboot.xml配置内容来输出到控制台和文件之中。</p>
 <a id="more"></a>
 
-<h3 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="一. 准备工作"></a>一. 准备工作</h3><p>JDK1.8或更高版本<br>项目自动构建工具：Gradle或者Maven，推荐Gradle对比maven有着简洁、灵活、可读性强等特点。<br>开发工具 eclipse或intelij等、个人推荐Intellij</p>
-<h3 id="二-创建springboot应用程序"><a href="#二-创建springboot应用程序" class="headerlink" title="二. 创建springboot应用程序"></a>二. 创建springboot应用程序</h3><p>1、打开intellij，首页Create new project; 2、点击spring assistant<br>【如果没有spring assistant选项，请首页点击configure-&gt;Plugins后搜索安装即可】<br>下一步; 3、project properties，这里默认下一步即可随后选择spring web start并下<br>一步填写工程名字，最终完成应用程序创建<br>目录结构如下<br><img src="/images/my_img/190725-1.jpg" alt></p>
-<h3 id="三-创建HelloController-java"><a href="#三-创建HelloController-java" class="headerlink" title="三. 创建HelloController.java"></a>三. 创建HelloController.java</h3><p>在src-&gt;main-&gt;java中创建包hello，并在包内创建HelloController.java<br>这里的目的是创建web控制器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">HelloController.java</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Greetings from Spring Boot!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>By default, Spring Boot logs only to the console and does not write log files. If you want to write log files in addition to the console output, you need to set a logging.file or logging.path property (for example, in your application.properties).</p>
+</blockquote>
+<p>通过在配置文件application.properties中设置 logging.path= 或者logging.file=来指定日志输出路径，也可以在xml中设定，如下参考</p>
+<h3 id="1-控制类例子"><a href="#1-控制类例子" class="headerlink" title="1. 控制类例子"></a>1. 控制类例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.neo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(LoginController.class);</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/login"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(HttpServletRequest request, Map&lt;String, Object&gt; map)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        logger.info(<span class="string">"登录控制器，登录"</span>);</span><br><span class="line">        <span class="comment">// 登录失败从request中获取shiro处理的异常信息。</span></span><br><span class="line">        <span class="comment">// shiroLoginFailure:就是shiro异常类的全类名.</span></span><br><span class="line">        String exception = (String) request.getAttribute(<span class="string">"shiroLoginFailure"</span>);</span><br><span class="line">        logger.info(<span class="string">"异常"</span>  + exception);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/403"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">unauthorizedRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        logger.info(<span class="string">"------没有权限-------"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"403"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>@RestController是spring4之后的新注解，即@Controller和@ResponseBody的组合注解，使Web请求返回数据而不是视图。<br>@RequestMapping配置url映射，即可以作用在控制器的某个方法上，也可以作用在此控制器类上<br>当控制器在类级别上添加@RequestMapping注解时，这个注解会应用到控制器的所有处理器方法上。<br>而处理器方法上的@RequestMapping注解会对类级别以上的@RequestMapping的声明进行补充。<br>@RequestMapping中的method参数有很多中选择，一般使用get/post.</p>
-<h3 id="四-创建Application-java"><a href="#四-创建Application-java" class="headerlink" title="四. 创建Application.java"></a>四. 创建Application.java</h3><p>hello包内创建Application.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Application.java</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.CommandLineRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommandLineRunner <span class="title">commandLineRunner</span><span class="params">(ApplicationContext ctx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> args -&gt; &#123;</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"Let's inspect the beans provided by Spring Boot:"</span>);</span><br><span class="line"></span><br><span class="line">            String[] beanNames = ctx.getBeanDefinitionNames();</span><br><span class="line">            Arrays.sort(beanNames);</span><br><span class="line">            <span class="keyword">for</span> (String beanName : beanNames) &#123;</span><br><span class="line">                System.out.println(beanName);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>LogBack读取配置文件的步骤<br>（1）尝试classpath下查找文件logback-test.xml<br>（2）如果文件不存在，尝试查找logback.xml<br>（3）如果两个文件都不存在，LogBack用BasicConfiguration自动对自己进行最小化配置，这样既实现了上面我们不需要添加任何配置就可以输出到控制台日志信息。</p>
+<h3 id="2-logback配置文件"><a href="#2-logback配置文件" class="headerlink" title="2. logback配置文件"></a>2. logback配置文件</h3><p>resources目录下新建logback配置文件logback.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span> <span class="attr">debug</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"LOG_HOME"</span> <span class="attr">value</span>=<span class="string">"./logs"</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 控制台输出 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"STDOUT"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.encoder.PatternLayoutEncoder"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg  %n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 按照每天生成日志文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"FILE"</span>  <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.TimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--日志文件输出的文件名--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">FileNamePattern</span>&gt;</span>$&#123;LOG_HOME&#125;/runtime.log.%d&#123;yyyy-MM-dd&#125;.log<span class="tag">&lt;/<span class="name">FileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--日志文件保留天数--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">MaxHistory</span>&gt;</span>30<span class="tag">&lt;/<span class="name">MaxHistory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.encoder.PatternLayoutEncoder"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--日志文件最大的大小--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">triggeringPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">MaxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">MaxFileSize</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">triggeringPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 日志输出级别 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">"INFO"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"STDOUT"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"FILE"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>@SpringBootApplication是@Configuration、@EnableAutoConfiguration、@ComponentScan的组合注解<br>(1) @Configuration 是一个类级注释，指示对象是一个bean定义的源。@Configuration 类通过<br>@Bean 注解的公共方法来声明bean<br>(2)@EnableAutoConfiguration 启用 Spring 应用程序上下文的自动配置，试图猜测和配置您可能需要的bean。自动配置类通常采用基于你的<br>classpath 和已经定义的 beans 对象进行应用。被 @EnableAutoConfiguration 注解的类所在的包有特定的意义，并且作为默认配置使用。<br>(3)@ComponentScan为 @Configuration注解的类配置组件扫描指令。同时提供与 Spring XML’s 元素并行的支持。无论是 basePackageClasses()或是 basePackages()（或其 alias 值）都可以定义指定的包进行扫描。如果指定的包没有被定义，则将从声明该注解的类所在的包进行扫描。<br>通俗的讲，@ComponentScan 注解会自动扫描指定包下的全部标有 @Component注解 的类，并注册<br>成bean，当然包括 @Component下的子注解<br>@Service、@Repository、@Controller。@ComponentScan 注解没有类似 、的属性。<br>(4)@Bean 注释是用来表示一个方法实例化，配置和初始化是由 Spring IoC 容器管理的一个新的<br>对象。</p>
-<h3 id="五-运行并访问"><a href="#五-运行并访问" class="headerlink" title="五. 运行并访问"></a>五. 运行并访问</h3><p>运行程序后访问<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a><br>效果如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> .   ____          _            __ _ _</span><br><span class="line"> /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \</span><br><span class="line">( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \</span><br><span class="line"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span><br><span class="line">  &apos;  |____| .__|_| |_|_| |_\__, | / / / /</span><br><span class="line"> =========|_|==============|___/=/_/_/_/</span><br><span class="line"> :: Spring Boot ::        (v2.1.6.RELEASE)</span><br><span class="line"></span><br><span class="line">2019-07-25 10:28:56.845  INFO 2912 --- [           main] hello.Application </span><br><span class="line">....................</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/my_img/190725-2.jpg" alt></p>
+<p>效果如下</p>
+<p><img src="/images/my_img/190813-1.jpg" alt></p>
+<h3 id="3-屏蔽记录日志"><a href="#3-屏蔽记录日志" class="headerlink" title="3. 屏蔽记录日志"></a>3. 屏蔽记录日志</h3><p>如果我们在项目中需要屏蔽某个或者多个包下不输出日志也不记录日志到文件内，那么我们需要修改application.yml添加对应配置:<br>logging:<br>  level:<br>   com.ly.logback.controller: ‘off’</p>
+<blockquote>
+<p>参考链接：<a href="https://www.jianshu.com/p/6dcb2e05dc5a" target="_blank" rel="noopener">https://www.jianshu.com/p/6dcb2e05dc5a</a></p>
+</blockquote>
 
     </div>
 
@@ -394,8 +395,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/07/18/Bootstrap 练手实例/" rel="next" title="Bootstrap练手实例">
-                  <i class="fa fa-chevron-left"></i> Bootstrap练手实例
+                <a href="/2019/08/08/SpringBoot-4 thymeleaf+jpa增删改查/" rel="next" title="SpringBoot-4. thymeleaf+jpa实现增删改查与登录验证">
+                  <i class="fa fa-chevron-left"></i> SpringBoot-4. thymeleaf+jpa实现增删改查与登录验证
                 </a>
               
             </div>
@@ -404,8 +405,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/07/28/hexo主题添加页面百分比/" rel="prev" title="hexo主题添加页面百分比">
-                  hexo主题添加页面百分比 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/08/17/SpringBoot-6 blogsystem填坑版/" rel="prev" title="SpringBoot-6. blog system填坑版 shiro">
+                  SpringBoot-6. blog system填坑版 shiro <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -576,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-准备工作"><span class="nav-text">一. 准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-创建springboot应用程序"><span class="nav-text">二. 创建springboot应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-创建HelloController-java"><span class="nav-text">三. 创建HelloController.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-创建Application-java"><span class="nav-text">四. 创建Application.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-运行并访问"><span class="nav-text">五. 运行并访问</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-控制类例子"><span class="nav-text">1. 控制类例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-logback配置文件"><span class="nav-text">2. logback配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-屏蔽记录日志"><span class="nav-text">3. 屏蔽记录日志</span></a></li></ol></div>
             
 
           </div>
