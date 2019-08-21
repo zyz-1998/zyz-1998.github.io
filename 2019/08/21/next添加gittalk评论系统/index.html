@@ -63,12 +63,12 @@
 <meta property="og:site_name" content="ZYZ BLOG">
 <meta property="og:description" content="博客一直没有来得及添加评论系统，主要是考虑添加哪一个评论系统。最终选择gittalk，看了许多网上的文章发现都是旧版本的，本文适用next7.3版本。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/190021-1.jpg">
-<meta property="og:updated_time" content="2019-08-21T07:34:16.367Z">
+<meta property="og:image" content="https://zyz-1998.github.io/images/my_img/19081-1.jpg">
+<meta property="og:updated_time" content="2019-08-21T07:38:17.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="next添加gittalk评论系统">
 <meta name="twitter:description" content="博客一直没有来得及添加评论系统，主要是考虑添加哪一个评论系统。最终选择gittalk，看了许多网上的文章发现都是旧版本的，本文适用next7.3版本。">
-<meta name="twitter:image" content="https://zyz-1998.github.io/images/my_img/190021-1.jpg">
+<meta name="twitter:image" content="https://zyz-1998.github.io/images/my_img/19081-1.jpg">
   <link rel="canonical" href="https://zyz-1998.github.io/2019/08/21/next添加gittalk评论系统/">
 
 
@@ -303,7 +303,7 @@
                 
               
 
-              <time title="创建时间：2019-08-21 14:50:09 / 修改时间：15:34:16" itemprop="dateCreated datePublished" datetime="2019-08-21T14:50:09+08:00">2019-08-21</time>
+              <time title="创建时间：2019-08-21 14:50:09 / 修改时间：15:38:17" itemprop="dateCreated datePublished" datetime="2019-08-21T14:50:09+08:00">2019-08-21</time>
             </span>
           
             
@@ -338,7 +338,7 @@
 </blockquote>
 <h3 id="1-建立评论仓库"><a href="#1-建立评论仓库" class="headerlink" title="1. 建立评论仓库"></a>1. 建立评论仓库</h3><p>建立一个名gitalk-commnet的评论仓库</p>
 <h3 id="2-新建OAuth-Apps"><a href="#2-新建OAuth-Apps" class="headerlink" title="2. 新建OAuth Apps"></a>2. 新建OAuth Apps</h3><p>github沿路径setting/Developer setting/OAuth Apps，新建自己的OAuth Apps，并参照下图填写，</p>
-<p><img src="/images/my_img/190021-1.jpg" alt></p>
+<p><img src="/images/my_img/19081-1.jpg" alt></p>
 <p>Register Application后可以看到client_id与client_secret请将其保存留待下步</p>
 <h3 id="3-更改配置文件"><a href="#3-更改配置文件" class="headerlink" title="3. 更改配置文件"></a>3. 更改配置文件</h3><p>在主题配置文件next/_config.yml搜索锁定gitalk，并如下更改</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  github_id:</span> 	<span class="comment">#github用户名,登陆时习惯用邮箱的放这里不行。一定得是自己的ID!</span></span><br><span class="line"><span class="attr">  id:</span> <span class="string">location.pathname</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">gitalk-commnet</span>			<span class="comment">#仓库名</span></span><br><span class="line"><span class="attr">  client_id:</span> 	<span class="comment">#application的id，即上文client_id</span></span><br><span class="line"><span class="attr">  client_secret:</span> 	<span class="comment">#application的密码，即上文client_secret</span></span><br><span class="line"><span class="attr">  admin_user:</span></span><br><span class="line"><span class="attr">  distraction_free_mode:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Gitalk's display language depends on user's browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line"><span class="attr">  language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
