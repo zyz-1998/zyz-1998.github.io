@@ -536,6 +536,9 @@
 
           </div>
           
+    
+    <div class="comments" id="gitalk-container"></div>
+  
 
         </div>
           
@@ -815,6 +818,26 @@
   <script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+    var gitalk = new Gitalk({
+      clientID: '83c4ea39d6a1cfe9e1dd',
+      clientSecret: 'f264c4004e2f32b03964082dd5dac13ca5526d59',
+      repo: 'git@github.com:zyz-1998/zyz-1998.github.io.git',
+      owner: 'zyz-1998',
+      admin: ['zyz-1998'],
+      id: '25ac9ef9489be4805d74611e24e7d833',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
   <!-- clicklove -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
