@@ -873,6 +873,7 @@ pre .javascript .function {
   color: #d9534f;
 }
 .btn {
+  box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.35);
   background: #fff;
   border: 2px solid #555;
   border-radius: 2px;
@@ -1809,7 +1810,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #621be8;
+  background: #13ff94;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
