@@ -889,7 +889,7 @@ pre .javascript .function {
   line-height: 2;
 }
 .btn:hover {
-  background-image: linear-gradient(90deg, #5073b8 0, #1098ad 5%, #07b39b 15%, #a166ab 30%, #f37055 40%, #f79533 50%, #f37055 60%, #a166ab 70%, #07b39b 85%, #1098ad 95%, #5073b8 100%) !important;
+  background-image: linear-gradient(10deg, #5073b8 0, #1098ad 5%, #07b39b 15%, #a166ab 30%, #f37055 40%, #f79533 50%, #f37055 60%, #a166ab 70%, #07b39b 85%, #1098ad 95%, #5073b8 100%) !important;
   border-color: #222;
   color: #fff;
 }
@@ -1810,7 +1810,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4462ff;
+  background: #adff5d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
